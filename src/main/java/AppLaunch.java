@@ -1,7 +1,9 @@
 import person.Person;
 import personComparators.CompareToName;
+import personComparators.CompareToSum;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class AppLaunch {
@@ -15,8 +17,15 @@ public class AppLaunch {
         people.add(new Person("Андрей", 123234));
         people.add(new Person("Олег", 112));
 
-        people.sort();
+        System.out.println("Сортировка по имени");
+        people.sort(new CompareToName());
+        for (Person person : people) {
+            System.out.println(person);
+        }
 
+        System.out.println("===========================================================");
+        System.out.println("Сортировка по денежной сумме");
+        people.sort(new CompareToSum());
         for (Person person : people) {
             System.out.println(person);
         }

@@ -1,15 +1,13 @@
 package personComparators;
 
+import person.Person;
+
 import java.util.Comparator;
 
-public class CompareToName implements Comparator<Integer> {
-    @Override
-    public int compare(Integer o1, Integer o2) {
-        return o1.compareTo(o2);
-    }
+public class CompareToName implements Comparator<Person> {
 
     @Override
-    public Comparator<Integer> reversed() {
-        return null;
+    public int compare(Person o1, Person o2) {
+        return o1.getName().compareTo(o2.getName());
     }
 }
