@@ -3,30 +3,27 @@ import personComparators.CompareToName;
 import personComparators.CompareToSum;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class AppLaunch {
     public static void main(String[] args) {
-        List<Person> people = new ArrayList<>();
+        List<Person> expected = new ArrayList<>();
 
-        people.add(new Person("Петр", 1234));
-        people.add(new Person("Иван", 2334));
-        people.add(new Person("Елена", 4321));
-        people.add(new Person("Алена", 43));
-        people.add(new Person("Андрей", 123234));
-        people.add(new Person("Олег", 112));
+        expected.add(new Person.Builder().setName("Испания").setSum(1717).build());
+        expected.add(new Person.Builder().setName("Наталья").setSum(343).build());
+        expected.add(new Person.Builder().setName("Янут").setSum(34222).build());
+        expected.add(new Person.Builder().setName("Ослям").setSum(55543).build());
 
         System.out.println("Сортировка по имени");
-        people.sort(new CompareToName());
-        for (Person person : people) {
+        expected.sort(new CompareToName());
+        for (Person person : expected) {
             System.out.println(person);
         }
 
         System.out.println("===========================================================");
         System.out.println("Сортировка по денежной сумме");
-        people.sort(new CompareToSum());
-        for (Person person : people) {
+        expected.sort(new CompareToSum());
+        for (Person person : expected) {
             System.out.println(person);
         }
     }
